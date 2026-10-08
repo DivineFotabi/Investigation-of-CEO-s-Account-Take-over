@@ -26,6 +26,9 @@ In this project I investigated an executive account take over during a client en
 - Ingested in Azure data explorer both the Sigin and the Audit logs.
 - Set the time frame for the attack from the 2026-08-10 to 2026-11-10
 - Queried the sigin logs to know who came in and from which location.
+- Queried the Audit logs to know what the attacker did.
+- Check the scope of the attack to see other victims.
+- Wrote an incident report.
 
 <img src= "https://github.com/DivineFotabi/Investigation-of-CEO-s-Account-Take-over/blob/7acb121f484405a643ae68d3ea78e4f4a025b4db/Sigin_CL1.png" /> 
 
