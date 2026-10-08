@@ -38,6 +38,9 @@ Looking at another account with almost thesame sign in locations we noticed the 
 
 <img src= "https://github.com/DivineFotabi/Investigation-of-CEO-s-Account-Take-over/blob/4b413e60556f98fc808930be889a5e82c4e17486/omar.png" /> 
 
+Analyzing the failed attempt from the sign in logs we notice 3 different Ip's from Nigeria attempting ten accounts and more. This show a possibile password spray attack by the attacker and not a brute force.
 <img src= "https://github.com/DivineFotabi/Investigation-of-CEO-s-Account-Take-over/blob/eeaacec7c35ab734d9f35b9a4c10ad14d9c6ef21/Failed%20Logins.png" /> 
+
+Confirming this we run the command below within a 24hours time frame and recorded the following below.
 
 
