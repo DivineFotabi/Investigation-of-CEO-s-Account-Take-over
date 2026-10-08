@@ -31,6 +31,9 @@ In this project I investigated an executive account take over during a client en
 
 The attempt on the CEO's account (daniel.reeve) started on 08/10/2026 at 12:35:48 am from Lagos Nigeria using a Windows 10 device with IP address 102.89.47.17 and had a couple of failed attempt but finally got in on the 10/10/2026 at 3:12:05 am from Lagos Nigeria using a windows 10 device. The original user sigined on the 10/08/2026 at 8:41:00 am. Same CEO's account and two signed ins from two location within a very short time interval.
 
+<img src= "https://github.com/DivineFotabi/Investigation-of-CEO-s-Account-Take-over/blob/ee62848942a60c81fef64c008b5354cd27ea869c/Sigin_CL2%20NTP.png" /> 
 
+From the above command we noticed a whole lot of sigin ins in London and three different Lagos Ip addresses within two hours interval which does not look like a usual between Lagos and London.
+Looking at another account with almost thesame sign in locations we noticed the time is within range of travel and possibly the user might be on a business trip.
 
 
