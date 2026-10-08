@@ -4,7 +4,7 @@
 
 # Objective
 
-In this project I investigated an executive account take over during a client engagement, traced the intial access and deliverd instant report
+In this project I investigated an executive account take over during a client engagement, traced the intial access, found the persistence, scope the victim and deliverd instant report.
 
 # Skills Learned
 
