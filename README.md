@@ -55,3 +55,6 @@ When the attacker got in they created two persistence methods that is using the 
 Determinig the scope of the accounts to see other victms I noticed that the attacker had access to two accounts and carried attempted breached on 24 others
 
 <img src= "https://github.com/DivineFotabi/Investigation-of-CEO-s-Account-Take-over/blob/fd7e3db8fbf92f6d9dd0f79476513b3a4cba4639/Scope.png" /> 
+
+<img src= "<img width="1372" height="852" alt="image" src="https://github.com/user-attachments/assets/8ae33e43-2aed-461b-a33e-a885f1cf0499" />
+
