@@ -23,9 +23,9 @@ In this project I investigated an executive account take over during a client en
 
 <img src= "https://github.com/DivineFotabi/Investigation-of-CEO-s-Account-Take-over/blob/2a91fe94e28ebe5d1f7cf7f9956e19fe519e0f10/Ticket.png" /> 
 
-- Both the Sigin and the Audit logs were ingested in the Azure data explorer.
-- The time frame for the attack was set from the 2026-08-10 to 2026-11-10
-- The Sigin logs were were queried to know who came in and from which location.
+- Ingested in Azure data explorer both the Sigin and the Audit logs.
+- Set the time frame for the attack from the 2026-08-10 to 2026-11-10
+- Queried the sigin logs to know who came in and from which location.
 
 <img src= "https://github.com/DivineFotabi/Investigation-of-CEO-s-Account-Take-over/blob/7acb121f484405a643ae68d3ea78e4f4a025b4db/Sigin_CL1.png" /> 
 
