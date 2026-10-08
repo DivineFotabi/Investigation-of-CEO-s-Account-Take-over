@@ -29,6 +29,8 @@ In this project I investigated an executive account take over during a client en
 
 <img src= "https://github.com/DivineFotabi/Investigation-of-CEO-s-Account-Take-over/blob/7acb121f484405a643ae68d3ea78e4f4a025b4db/Sigin_CL1.png" /> 
 
-The attempt on the CEO's account (daniel.reeve) started on 08/10/2026 at 12:35:48 am from Lagos Nigeria using a Windows 10 device with IP address 102.89.47.17 and had a couple of failed attempt but finally got in on the 10/10/2026 at 3:12:05 from Lagos Nigeria using a windows 10 device. 
+The attempt on the CEO's account (daniel.reeve) started on 08/10/2026 at 12:35:48 am from Lagos Nigeria using a Windows 10 device with IP address 102.89.47.17 and had a couple of failed attempt but finally got in on the 10/10/2026 at 3:12:05 am from Lagos Nigeria using a windows 10 device. The original user sigined on the 10/08/2026 at 8:41:00 am. Same CEO's account and two signed ins from two location within a very short time interval.
+
+
 
 
