@@ -24,6 +24,11 @@ In this project I investigated an executive account take over during a client en
 <img src= "https://github.com/DivineFotabi/Investigation-of-CEO-s-Account-Take-over/blob/2a91fe94e28ebe5d1f7cf7f9956e19fe519e0f10/Ticket.png" /> 
 
 - Both the Sigin and the Audit logs were ingested in the Azure data explorer.
+- The time frame for the attack was set from the 2026-08-10 to 2026-11-10
 - The Sigin logs were were queried to know who came in and from which location.
+
+<img src= "https://github.com/DivineFotabi/Investigation-of-CEO-s-Account-Take-over/blob/7acb121f484405a643ae68d3ea78e4f4a025b4db/Sigin_CL1.png" /> 
+
+The attempt on the CEO's account (daniel.reeve) started on 08/10/2026 at 12:35:48 am from Lagos Nigeria using a Windows 10 device with IP address 102.89.47.17 and had a couple of failed attempt but finally got in on the 10/10/2026 at 3:12:05 from Lagos Nigeria using a windows 10 device. 
 
 
