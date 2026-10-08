@@ -21,4 +21,9 @@ In this project I investigated an executive account take over during a client en
 
 # Setup/Steps
 
-<img src= "https://github.com/DivineFotabi/Investigation-of-CEO-s-Account-Take-over/blob/2a91fe94e28ebe5d1f7cf7f9956e19fe519e0f10/Ticket.png" />
+<img src= "https://github.com/DivineFotabi/Investigation-of-CEO-s-Account-Take-over/blob/2a91fe94e28ebe5d1f7cf7f9956e19fe519e0f10/Ticket.png" /> 
+
+- Both the Sigin and the Audit logs were ingested in the Azure data explorer.
+- The Sigin logs were were queried to know who came in and from which location.
+
+
