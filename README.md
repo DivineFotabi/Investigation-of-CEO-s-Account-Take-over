@@ -49,3 +49,7 @@ Confirming this we run the command below within a 24hours time frame and recorde
 <img src= "https://github.com/DivineFotabi/Investigation-of-CEO-s-Account-Take-over/blob/153413a7eb6fc8d6e3f066f40805e9d505403652/confirming%20psswd%20Spary.png" /> 
 
 When the attacker got in they created two persistence methods that is using the Pixel 6 device for authentication and establishing a RSS Subscriptions rule.
+
+<img src= "https://github.com/DivineFotabi/Investigation-of-CEO-s-Account-Take-over/blob/b2bdf01e3dd7006c843f719454ddb9ceffb92177/what%20they%20did.png" />
+
+Determinig the scope of the accounts to see other victms I noticed that the attacker had access to two accounts and carried attempted breached on 24 others
