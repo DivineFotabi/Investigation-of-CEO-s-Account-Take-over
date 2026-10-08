@@ -36,4 +36,6 @@ The attempt on the CEO's account (daniel.reeve) started on 08/10/2026 at 12:35:4
 From the above command we noticed a whole lot of sigin ins in London and three different Lagos Ip addresses within two hours interval which does not look like a usual between Lagos and London.
 Looking at another account with almost thesame sign in locations we noticed the time is within range of travel and possibly the user might be on a business trip.
 
+<img src= "https://github.com/DivineFotabi/Investigation-of-CEO-s-Account-Take-over/blob/4b413e60556f98fc808930be889a5e82c4e17486/omar.png" />
+
 
