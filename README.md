@@ -20,3 +20,5 @@ In this project I investigated an executive account take over during a client en
 - Audit logs
 
 # Setup/Steps
+
+<img src= "https://github.com/DivineFotabi/Investigation-of-CEO-s-Account-Take-over/blob/2a91fe94e28ebe5d1f7cf7f9956e19fe519e0f10/Ticket.png" />
