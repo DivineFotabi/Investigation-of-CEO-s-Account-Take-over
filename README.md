@@ -43,4 +43,6 @@ Analyzing the failed attempt from the sign in logs we notice 3 different Ip's fr
 
 Confirming this we run the command below within a 24hours time frame and recorded the following below.
 
+<img src= "https://github.com/DivineFotabi/Investigation-of-CEO-s-Account-Take-over/blob/153413a7eb6fc8d6e3f066f40805e9d505403652/confirming%20psswd%20Spary.png" /> 
+
 
