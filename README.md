@@ -53,3 +53,5 @@ When the attacker got in they created two persistence methods that is using the 
 <img src= "https://github.com/DivineFotabi/Investigation-of-CEO-s-Account-Take-over/blob/b2bdf01e3dd7006c843f719454ddb9ceffb92177/what%20they%20did.png" />
 
 Determinig the scope of the accounts to see other victms I noticed that the attacker had access to two accounts and carried attempted breached on 24 others
+
+<img src= "https://github.com/DivineFotabi/Investigation-of-CEO-s-Account-Take-over/blob/fd7e3db8fbf92f6d9dd0f79476513b3a4cba4639/Scope.png" /> 
