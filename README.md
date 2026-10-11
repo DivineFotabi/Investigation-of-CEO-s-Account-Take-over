@@ -99,6 +99,16 @@ The breached was discovered the same morning and both accounts were kept under c
 2) The lagos IPs (3) produced 114 failed sign-in (ResultType 50126) across the 26 accounts from the 8 to 10 Aug. Between 00:00 and 05:00 UTC 102.89.44.17 registered 48 failures over 23 accounts, 102.89.45.101 registered 38 failures over 20 accounts and 102.89.44.23 registered 28 failures over 18 accounts.The pattern seen in this failure signifies password spraying (T1110.003 as per the MITRE ATT&CK).
 3) Multifactor Authentication a persistent method was recorded at 03:31:09 that is six minutes after the intial access. The Audit logs showed that the attacker used a Pixel 6 device as register security tool on daniel reeve. With this the attacker will survive a password reset which is why credntial reset is not the ideal method to deal with this.
 4) A Business Email Compromise was done by the attacker through the setting up of a 'RSS Subscription Rule' to divert payment invoices from the finance departments to the RSS feeds folder and marked read. The main reason for this is to hide finance transactions from the mail owner but no finance theft was recorded in the logs provided.
-5) Not just daniel was successfully compromised. the attacker also had access to a member of staff's account Priya Nair from 102
+5) Not just daniel was successfully compromised. The attacker also had access to a member of staff's account Priya Nair from 102.89.45.101 at 03:47:18 with a shared point access. The account was based in London with no foreign activity. No persistence was noticed in the account but the account still needed to be contained.
+6) Omar Farah shows 12 sign-in from Dubai from the 8-10 Aug. All these activities took place during the day and a successful sign-in on first trial and no failures all coming from thesame iOS 17 device. This show a real travel travel history but since still among the breached a password reset will be carried out.
+
+# Indicators of Compromise
+
+| Type | Value | First Seen | Context |
+|------|-------|------------|---------|
+| IPV4 | 102.89.44.17 | Aug 08, at 00:00 | Lagos, Nigeria Spray source; CEO initial access,MFA registration, inbox rule |
+| IPV4 | 102.89.44.23 | Aug 08, at 00:00 | Lagos, Nigeria Spray source (28 failures, 18
+accounts |
+| IPv4 | 102.89.45.101 | Aug 08, ~00:00 | Lagos, NG. Spray source; priya.nair compromise |
  
 
