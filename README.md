@@ -60,6 +60,10 @@ Determinig the scope of the accounts to see other victms I noticed that the atta
 <img src= "https://github.com/user-attachments/assets/8ae33e43-2aed-461b-a33e-a885f1cf0499" /> 
 
 
-More analysis on the other victim priya.nair to check on more potential backdoors and to what extend the victim was exploited. 
+More analysis on the other victim priya.nair to check on more potential backdoors and which other persistence method the victim used. 
+
+<img src= "https://github.com/DivineFotabi/Investigation-of-CEO-s-Account-Take-over/blob/08a90bbcad9a1e619fe936618b86c8d7cc926e1a/More%20Persistence.png" />
+
+The results show no Multifacator authentication method was used or Rule set. This doesnot imply the victim is totally free hance all the methods of containments need to to be applied still on the priya.nair victim.
 
 # Incident Report
