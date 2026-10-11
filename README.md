@@ -109,6 +109,16 @@ The breached was discovered the same morning and both accounts were kept under c
 | IPV4 | 102.89.44.17 | Aug 08, at 00:00 | Lagos, Nigeria Spray source; CEO initial access,MFA registration, inbox rule |
 | IPV4 | 102.89.44.23 | Aug 08, at 00:00 | Lagos, Nigeria Spray source (28 failures, 18
 accounts |
-| IPv4 | 102.89.45.101 | Aug 08, ~00:00 | Lagos, NG. Spray source; priya.nair compromise |
- 
+| IPv4 | 102.89.45.101 | Aug 08, at 00:00 | Lagos, NG. Spray source; priya.nair compromise |
+| Device fingerprint | Windows 10 / Chrome 125 | Aug 08 | Consistent attacker fingerprint on all 102.89.x.x activity |
+| MFA device name | 'Pixel 6' (authenticator app)'Pixel 6' (authenticator app) | Aug 10, 03:18:44 | Attacker-registered MFA on daniel.reeve removed |
+| Inbox rule name | 'RSS Subscriptions' | Aug 10, 03:31:09 | BEC mail-hiding rule on daniel.reeve - deleted |
 
+# MITRE ATT&CK; mapping
+
+| Tactic | Technique ID | Technique name | Evidenced by |
+|--------|--------------|----------------|--------------|
+| Credential Access | T1110.003 | Brute Force: Password Spraying | Finding 2 - 114 failures, 26 accounts, 3 nights, 3 IPs |
+| Initial Access | T1078 | Valid Accounts | Findings 1 and 5 - successful logins with sprayed credentials |
+| Persistence | T1098.005 | Account Manipulation: Device Registration | Finding 3 - attacker authenticator 'Pixel 6' |
+| Defense Evasion | T1564.008 | Hide Artifacts: Email Hiding Rules | Finding 4 - inbox rule 'RSS Subscriptions' |
