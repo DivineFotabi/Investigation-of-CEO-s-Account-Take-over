@@ -143,11 +143,11 @@ alba.vega, amelia.frost, aria.reid, cole.burke, dina.said, emma.hayes, ethan.wel
 ## Recommendations
 
 1) Force password resets for the 24 targeted-but-not-breached accounts listed in section 6 - the spray may have come closer than the logs show.
-2)  Require MFA on all accounts and disable legacy authentication protocols that bypass it; two accounts fell to password-only guessing.
+2)  Require multifactor Authentication on all accounts and disable legacy authentication protocols that bypass it; two accounts fell to password-only guessing.
 3)   Alert on new MFA method registration and new inbox rules for executive accounts - both attacker persistence actions were loggable but unmonitored.
-4)    Deploy a password-spray detection rule (failures per IP across distinct accounts in a rolling window) this attack wasvisible from night one, two days before the breach.
+4)    Deploy a password-spray detection rule (failures per IP across distinct accounts in a rolling window) this attack was visible from night one, two days before the breach.
 5)  Review Conditional Access: block or step-up authentication from countries with no business presence.
-6)   Brief the finance team on BEC risk before the enterprise deal closes: verify any payment-detail change by phone on a known number.
+6)   Brief the finance team on Business Email Compromise risk before the enterprise deal closes: verify any payment-detail change by phone on a known number.
 
 ## Lesson Learned
 
