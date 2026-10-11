@@ -66,4 +66,11 @@ More analysis on the other victim priya.nair to check on more potential backdoor
 
 The results show no Multifacator authentication method was used or Rule set. This doesnot imply the victim is totally free it shows the lack of facts from the logs hance all the methods of containments need to to be applied still on the priya.nair victim.
 
-# Incident Report
+## Incident Report
+
+# SUMMARY
+From the 8 to the 10 August 2926, an external attacker tried commonly used password to access 26 accounts owned by Cloudora staff. The three IP address used for this attacker was verified to come from Nigeria. On the 10 of August at 3:12am the attacked got a correct password to an account that was owned by Daniel Reeve who happened to be the CEO and at 3:47am he got access to another staff account Priya Nair. On the CEO'S account the attacker set uo thier own authentication method ( a pixel device) and created a rule to enable them divert invoice related emails.
+The breached was discovered the same morning and both accounts were kept under control, the device and the rule was removed and the attacker's network address blocked. No data theft of data or payments was recorded. The other 24 accounts that were targeted but not breached were all flaged for password reset 
+
+# Timeline
+
