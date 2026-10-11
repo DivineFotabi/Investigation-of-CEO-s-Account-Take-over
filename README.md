@@ -121,4 +121,35 @@ accounts |
 | Credential Access | T1110.003 | Brute Force: Password Spraying | Finding 2 - 114 failures, 26 accounts, 3 nights, 3 IPs |
 | Initial Access | T1078 | Valid Accounts | Findings 1 and 5 - successful logins with sprayed credentials |
 | Persistence | T1098.005 | Account Manipulation: Device Registration | Finding 3 - attacker authenticator 'Pixel 6' |
-| Defense Evasion | T1564.008 | Hide Artifacts: Email Hiding Rules | Finding 4 - inbox rule 'RSS Subscriptions' |
+| Defense Evasion | T1564.008 | Hide Artifacts: Email Hiding Rules | Finding 4 - inbox rule 'RSS Subscriptions' | 
+# Scope
+1) Daniel.reeve&cloudora.io (03:12:05 UTC) and priya.nair&cloudora.io (03:47:18 UTC), both 10 Aug, both from
+102.89.x.x attacker infrastructure, evidenced by successful sign-ins in CloudoraSignIn_CL.
+2) The spray Targeted 26 distinct account; excluding the two breached accounts, 24 recieved failed attempts and required password reset
+alba.vega, amelia.frost, aria.reid, cole.burke, dina.said, emma.hayes, ethan.wells, freya.lynn, gwen.muir, isla.grant, joel.kerr, jude.ross, kian.patel, leah.stone, lena.voss, liam.doyle, mira.shah, nina.cole, omar.farah, rhys.owen, ruth.dean, ryan.boyd, seth.lane, sofia.marino (all @cloudora.io).
+3) omar.farah&cloudora.io. Dubai sign-ins assessed as legitimate travel . Remains in the reset list above as a spray target.
+
+# Action Taken
+
+| order | Action | Why this matters |
+|-------|--------|------------------|
+| 1 | Revoked all active sessions and refresh token for daniel.reeve and priya.nair | Kills live attacker session immediately; a reset without revocation leaves existing session working |
+| 2 | Reset credentials for both compromised accounts | New credentials only matter once old session are dead |
+| 3 | Removed attacker MFA method 'pixel 6' from daniel.reeve; reviewed priya.nair MFA methods (no attacker method found) | New credentials only matter once old sessions are dead |
+| 4 | Deleted inbox rule 'RSS Subscription' from daniel.reeve mailbox; audited both mailboxes for futher rules | Removes the Business Email Compromise staging; rules persist independently of credentials |
+| 5 | Blocked 102.89.44.17, 102.89.44.23, 102.89.45.101 via conditional Access / named locations | Cuts the know attacker infrastructure off from the tenant |
+| 6 | Verified redo Step 1 and Step 5 queries -no 102.89 activity after containment; forced re-authentication on both accounts | Containment is a claim until you prove it in the logs|
+
+# Recommendations
+
+1) Force password resets for the 24 targeted-but-not-breached accounts listed in section 6 - the spray may have come closer than the logs show.
+2)  Require MFA on all accounts and disable legacy authentication protocols that bypass it; two accounts fell to password-only guessing.
+3)   Alert on new MFA method registration and new inbox rules for executive accounts - both attacker persistence actions were loggable but unmonitored.
+4)    Deploy a password-spray detection rule (failures per IP across distinct accounts in a rolling window) this attack wasvisible from night one, two days before the breach.
+5)  Review Conditional Access: block or step-up authentication from countries with no business presence.
+6)   Brief the finance team on BEC risk before the enterprise deal closes: verify any payment-detail change by phone on a known number.
+
+# Lesson Learned
+
+Detection relied on a human noticing impossible travel five and a half hours after initial access; a basic spray rule would have alerted on night one, roughly 51 hours earlier. The audit log turned a password incident into the real story - without it, containment would have missed the Multifactor Authentication back door and the business email compromise rule. Scoping past the first victim found the second
+account within minutes of the same query. Baseline comparison (Daniel vs Omar) prevented both a missed detection and a false accusation, and belongs in every identity investigation.
