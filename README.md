@@ -74,3 +74,31 @@ The breached was discovered the same morning and both accounts were kept under c
 
 # Timeline
 
+| Time (UTC) | Source | Event |
+|------------|--------|-------|
+| Aug 08, 00:00-05:00 | Sign-in | Password spray night 1:44 failed sign-ins from 102.89 IPs across 20 accounts |
+| Aug 09, 00:00-05:00 | Sign-in | Password spray night 2: 36 failed sign-ins, same source IPs |
+| Aug 10, 00:35;48 | Sign-in | Spray night 3 begins; Failed attempt against daniel reeve from 102.89.44.17 |
+| Aug 10, 03:09:12 | Sign-in | Failed sign-in, daniel.reeve 102.89.44.17 lagos |
+| Aug 10, 03:10:41 | Sign-in | Failed sign-in, daniel.reeve, 102.89.44.17 |
+| Aug 10, 03:12:05 | Sign-in | Successful sign-in, daniel.reeve, 102.89.44.17, Windows 10 / Chrome 125 - initial access |
+| Aug 10, 03:14:30 | Sign-in | daniel.reeve mailbox accessed via Outlook Web from 102.89.44.17 |
+| Aug 10, 03:18:44 | Sign-in | Attacker registers own authenticator app on daniel.reeve, device 'Pixel 6' |
+| Aug 10, 03:26:02 | Sign-in | daniel.reeve session opens Azure Portal from 102.89.44.17 |
+| Aug 10, 03:31:09 | Audit |  Inbox rule 'RSS Subscriptions' created on daniel.reeve: mail from finance*cloudora.io or containing 'invoice' moved to RSS Feeds and marked read |
+| Aug 10, 03:44:55 | Sign-in | Failed sign-in, priya.nair, 102.89.45.101 | 
+| Aug 10, 03:47:18 | Sign-in | Successful sign-in, priya.nair, 102.89.45.101 - second account compromised |
+| Aug 10, 03:52:40 | Sign-in | priya.nair session accesses SharePoint Online from 102.89.45.101 |
+| Aug 10, 08:41:00 | Sign-in | Daniel Reeve's genuine sign-in from London (203.0.113.11, macOS/Safari) - account in use from two countries 5.5 hours apart |
+| Aug 10, 08:55 | Ticket | IT admin flags impossible travel on the CEO account; ticket CLD-0001 raised, investigation starts |
+| Aug 10, ~10:30 | Response | Containment executed on both accounts |
+
+# Findings
+
+1) The CEO's account daniel reeve access was obtained at 03:12:05 UTC on the 10 Aug from a window 10 device that happened to be in Lagos Nigeria having a network address of 102.89.44.17. The success was immediately followed by multiple fail attemptsat 03:09 and 03:10 and mailbox access (Outlook web). Aure Portal access at 03:26). The accounts original location is United Kingdom where Daniel sign's in from London at 08:41 the same morning usingd a macOS device. Travel and VPN's where not used in the failure pattern as the unfamiliar devices were on the same day as the London activity.
+2) The lagos IPs (3) produced 114 failed sign-in (ResultType 50126) across the 26 accounts from the 8 to 10 Aug. Between 00:00 and 05:00 UTC 102.89.44.17 registered 48 failures over 23 accounts, 102.89.45.101 registered 38 failures over 20 accounts and 102.89.44.23 registered 28 failures over 18 accounts.The pattern seen in this failure signifies password spraying (T1110.003 as per the MITRE ATT&CK).
+3) Multifactor Authentication a persistent method was recorded at 03:31:09 that is six minutes after the intial access. The Audit logs showed that the attacker used a Pixel 6 device as register security tool on daniel reeve. With this the attacker will survive a password reset which is why credntial reset is not the ideal method to deal with this.
+4) A Business Email Compromise was done by the attacker through the setting up of a 'RSS Subscription Rule' to divert payment invoices from the finance departments to the RSS feeds folder and marked read. The main reason for this is to hide finance transactions from the mail owner but no finance theft was recorded in the logs provided.
+5) Not just daniel was successfully compromised. the attacker also had access to a member of staff's account Priya Nair from 102
+ 
+
