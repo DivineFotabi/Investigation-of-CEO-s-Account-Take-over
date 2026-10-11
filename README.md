@@ -1,12 +1,12 @@
-# Investigation-of-CEO-s-Account-Take-over
+## Investigation-of-CEO-s-Account-Take-over
 
 <img src= "https://github.com/DivineFotabi/Investigation-of-CEO-s-Account-Take-over/blob/fcd1d84c40223d7888a76c83984bfeefadd37679/Cloudora%20setup.png" />
 
-# Objective
+## Objective
 
 In this project I investigated an executive account take over during a client engagement, traced the intial access, found the persistence, scope the victim and deliverd instant report.
 
-# Skills Learned
+## Skills Learned
 
 - KQL
 - Entra ID Signin Analysis
@@ -14,12 +14,12 @@ In this project I investigated an executive account take over during a client en
 - MITRE ATT&CK Mapping
 - Incident Reporting
 
-# Tools
+## Tools
 - Azure Data explore
 - Sigin logs
 - Audit logs
 
-# Setup/Steps
+## Setup/Steps
 
 <img src= "https://github.com/DivineFotabi/Investigation-of-CEO-s-Account-Take-over/blob/2a91fe94e28ebe5d1f7cf7f9956e19fe519e0f10/Ticket.png" /> 
 
@@ -68,7 +68,7 @@ The results show no Multifacator authentication method was used or Rule set. Thi
 
 ## Incident Report
 
-# SUMMARY
+# Summary
 From the 8 to the 10 August 2926, an external attacker tried commonly used password to access 26 accounts owned by Cloudora staff. The three IP address used for this attacker was verified to come from Nigeria. On the 10 of August at 3:12am the attacked got a correct password to an account that was owned by Daniel Reeve who happened to be the CEO and at 3:47am he got access to another staff account Priya Nair. On the CEO'S account the attacker set uo thier own authentication method ( a pixel device) and created a rule to enable them divert invoice related emails.
 The breached was discovered the same morning and both accounts were kept under control, the device and the rule was removed and the attacker's network address blocked. No data theft of data or payments was recorded. The other 24 accounts that were targeted but not breached were all flaged for password reset 
 
@@ -140,7 +140,7 @@ alba.vega, amelia.frost, aria.reid, cole.burke, dina.said, emma.hayes, ethan.wel
 | 5 | Blocked 102.89.44.17, 102.89.44.23, 102.89.45.101 via conditional Access / named locations | Cuts the know attacker infrastructure off from the tenant |
 | 6 | Verified redo Step 1 and Step 5 queries -no 102.89 activity after containment; forced re-authentication on both accounts | Containment is a claim until you prove it in the logs|
 
-# Recommendations
+## Recommendations
 
 1) Force password resets for the 24 targeted-but-not-breached accounts listed in section 6 - the spray may have come closer than the logs show.
 2)  Require MFA on all accounts and disable legacy authentication protocols that bypass it; two accounts fell to password-only guessing.
@@ -149,7 +149,7 @@ alba.vega, amelia.frost, aria.reid, cole.burke, dina.said, emma.hayes, ethan.wel
 5)  Review Conditional Access: block or step-up authentication from countries with no business presence.
 6)   Brief the finance team on BEC risk before the enterprise deal closes: verify any payment-detail change by phone on a known number.
 
-# Lesson Learned
+## Lesson Learned
 
 Detection relied on a human noticing impossible travel five and a half hours after initial access; a basic spray rule would have alerted on night one, roughly 51 hours earlier. The audit log turned a password incident into the real story - without it, containment would have missed the Multifactor Authentication back door and the business email compromise rule. Scoping past the first victim found the second
 account within minutes of the same query. Baseline comparison (Daniel vs Omar) prevented both a missed detection and a false accusation, and belongs in every identity investigation.
