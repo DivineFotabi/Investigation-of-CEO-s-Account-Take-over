@@ -64,6 +64,6 @@ More analysis on the other victim priya.nair to check on more potential backdoor
 
 <img src= "https://github.com/DivineFotabi/Investigation-of-CEO-s-Account-Take-over/blob/08a90bbcad9a1e619fe936618b86c8d7cc926e1a/More%20Persistence.png" />
 
-The results show no Multifacator authentication method was used or Rule set. This doesnot imply the victim is totally free hance all the methods of containments need to to be applied still on the priya.nair victim.
+The results show no Multifacator authentication method was used or Rule set. This doesnot imply the victim is totally free it shows the lack of facts from the logs hance all the methods of containments need to to be applied still on the priya.nair victim.
 
 # Incident Report
