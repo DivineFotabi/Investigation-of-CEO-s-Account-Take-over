@@ -30,15 +30,17 @@ In this project I investigated an executive account take over during a client en
 - Check the scope of the attack to see other victims.
 - Wrote an incident report.
 
+# Baseline of CEO'S Account:
 <img src= "https://github.com/DivineFotabi/Investigation-of-CEO-s-Account-Take-over/blob/7acb121f484405a643ae68d3ea78e4f4a025b4db/Sigin_CL1.png" /> 
 
 The attempt on the CEO's account (daniel.reeve) started on 08/10/2026 at 12:35:48 am from Lagos Nigeria using a Windows 10 device with IP address 102.89.47.17 and had a couple of failed attempt but finally got in on the 10/10/2026 at 3:12:05 am from Lagos Nigeria using a windows 10 device. The original user sigined on the 10/08/2026 at 8:41:00 am. Same CEO's account and two signed ins from two location within a very short time interval.
 
 <img src= "https://github.com/DivineFotabi/Investigation-of-CEO-s-Account-Take-over/blob/ee62848942a60c81fef64c008b5354cd27ea869c/Sigin_CL2%20NTP.png" /> 
 
-From the above command we noticed a whole lot of sigin ins in London and three different Lagos Ip addresses within two hours interval which does not look like a usual between Lagos and London.
+From the above command we noticed a whole lot of sigin-ins in London and three different Lagos Ip addresses within two hours interval which does not look like a usual between Lagos and London.
 Looking at another account with almost thesame sign in locations we noticed the time is within range of travel and possibly the user might be on a business trip.
 
+# Password spray
 <img src= "https://github.com/DivineFotabi/Investigation-of-CEO-s-Account-Take-over/blob/4b413e60556f98fc808930be889a5e82c4e17486/omar.png" /> 
 
 Analyzing the failed attempt from the sign in logs we notice 3 different Ip's from Nigeria attempting ten accounts and more. This show a possibile password spray attack by the attacker and not a brute force.
@@ -48,20 +50,24 @@ Confirming this we run the command below within a 24hours time frame and recorde
 
 <img src= "https://github.com/DivineFotabi/Investigation-of-CEO-s-Account-Take-over/blob/153413a7eb6fc8d6e3f066f40805e9d505403652/confirming%20psswd%20Spary.png" /> 
 
+# Persistence Methods
 When the attacker got in they created two persistence methods that is using the Pixel 6 device for authentication and establishing a RSS Subscriptions rule.
 
 <img src= "https://github.com/DivineFotabi/Investigation-of-CEO-s-Account-Take-over/blob/b2bdf01e3dd7006c843f719454ddb9ceffb92177/what%20they%20did.png" />
 
+# Scope of the Attack
 Determinig the scope of the accounts to see other victms I noticed that the attacker had access to two accounts and carried attempted breached on 24 others
 
 <img src= "https://github.com/DivineFotabi/Investigation-of-CEO-s-Account-Take-over/blob/fd7e3db8fbf92f6d9dd0f79476513b3a4cba4639/Scope.png" /> 
 
 
+# Scoping more on the second victim
 <img src= "https://github.com/user-attachments/assets/8ae33e43-2aed-461b-a33e-a885f1cf0499" /> 
 
 
 More analysis on the other victim priya.nair to check on more potential backdoors and which other persistence method the victim used. 
 
+# Checking for more Backdoors
 <img src= "https://github.com/DivineFotabi/Investigation-of-CEO-s-Account-Take-over/blob/08a90bbcad9a1e619fe936618b86c8d7cc926e1a/More%20Persistence.png" />
 
 The results show no Multifacator authentication method was used or Rule set. This doesnot imply the victim is totally free it shows the lack of facts from the logs hance all the methods of containments need to to be applied still on the priya.nair victim.
