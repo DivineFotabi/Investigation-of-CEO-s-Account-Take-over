@@ -101,12 +101,11 @@ The breached was discovered the same morning and both accounts were kept under c
 
 #### Findings
 
-1) The CEO's account daniel reeve access was obtained at 03:12:05 UTC on the 10 Aug from a window 10 device that happened to be in Lagos Nigeria having a network address of 102.89.44.17. The success was immediately followed by multiple fail attemptsat 03:09 and 03:10 and mailbox access (Outlook web). Aure Portal access at 03:26). The accounts original location is United Kingdom where Daniel sign's in from London at 08:41 the same morning usingd a macOS device. Travel and VPN's where not used in the failure pattern as the unfamiliar devices were on the same day as the London activity.
+1) The CEO's account daniel reeve recorded multiple fail attemptsat 03:09 and 03:10 and mailbox access (Outlook web). Aure Portal access at 03:26).Access was obtained at 03:12:05 UTC on the 10 Aug from a window 10 device that happened to be in Lagos Nigeria having a network address of 102.89.44.17. The accounts original location is United Kingdom where Daniel sign's in from London at 08:41 the same morning usingd a macOS device. Travel and VPN's where not used in the failure pattern as the unfamiliar devices were on the same day as the London activity.
 2) The lagos IPs (3) produced 114 failed sign-in (ResultType 50126) across the 26 accounts from the 8 to 10 Aug. Between 00:00 and 05:00 UTC 102.89.44.17 registered 48 failures over 23 accounts, 102.89.45.101 registered 38 failures over 20 accounts and 102.89.44.23 registered 28 failures over 18 accounts.The pattern seen in this failure signifies password spraying (T1110.003 as per the MITRE ATT&CK).
-3) Multifactor Authentication a persistent method was recorded at 03:31:09 that is six minutes after the intial access. The Audit logs showed that the attacker used a Pixel 6 device as register security tool on daniel reeve. With this the attacker will survive a password reset which is why credntial reset is not the ideal method to deal with this.
+3) Multifactor Authentication a persistent method was recorded at 03:18:44 that is six minutes after the intial access. The Audit logs showed that the attacker used a Pixel 6 device as register security tool on daniel reeve. With this the attacker will survive a password reset which is why credntial reset is not the ideal method to deal with this.
 4) A Business Email Compromise was done by the attacker through the setting up of a 'RSS Subscription Rule' to divert payment invoices from the finance departments to the RSS feeds folder and marked read. The main reason for this is to hide finance transactions from the mail owner but no finance theft was recorded in the logs provided.
 5) Not just daniel was successfully compromised. The attacker also had access to a member of staff's account Priya Nair from 102.89.45.101 at 03:47:18 with a shared point access. The account was based in London with no foreign activity. No persistence was noticed in the account but the account still needed to be contained.
-6) Omar Farah shows 12 sign-in from Dubai from the 8-10 Aug. All these activities took place during the day and a successful sign-in on first trial and no failures all coming from thesame iOS 17 device. This show a real travel travel history but since still among the breached a password reset will be carried out.
 
 #### Indicators of Compromise
 
@@ -129,11 +128,11 @@ accounts |
 | Persistence | T1098.005 | Account Manipulation: Device Registration | Finding 3 - attacker authenticator 'Pixel 6' |
 | Defense Evasion | T1564.008 | Hide Artifacts: Email Hiding Rules | Finding 4 - inbox rule 'RSS Subscriptions' | 
 #### Scope
-1) Daniel.reeve&cloudora.io (03:12:05 UTC) and priya.nair&cloudora.io (03:47:18 UTC), both 10 Aug, both from
+1) Daniel.reeve@cloudora.io (03:12:05 UTC) and priya.nair@cloudora.io (03:47:18 UTC), both 10 Aug, both from
 102.89.x.x attacker infrastructure, evidenced by successful sign-ins in CloudoraSignIn_CL.
 2) The spray Targeted 26 distinct account; excluding the two breached accounts, 24 recieved failed attempts and required password reset
 alba.vega, amelia.frost, aria.reid, cole.burke, dina.said, emma.hayes, ethan.wells, freya.lynn, gwen.muir, isla.grant, joel.kerr, jude.ross, kian.patel, leah.stone, lena.voss, liam.doyle, mira.shah, nina.cole, omar.farah, rhys.owen, ruth.dean, ryan.boyd, seth.lane, sofia.marino (all @cloudora.io).
-3) omar.farah&cloudora.io. Dubai sign-ins assessed as legitimate travel . Remains in the reset list above as a spray target.
+3) omar.farah@cloudora.io. Dubai sign-ins assessed as legitimate travel . Remains in the reset list above as a spray target.
 
 #### Action Taken
 
@@ -141,12 +140,13 @@ alba.vega, amelia.frost, aria.reid, cole.burke, dina.said, emma.hayes, ethan.wel
 |-------|--------|------------------|
 | 1 | Revoked all active sessions and refresh token for daniel.reeve and priya.nair | Kills live attacker session immediately; a reset without revocation leaves existing session working |
 | 2 | Reset credentials for both compromised accounts | New credentials only matter once old session are dead |
-| 3 | Removed attacker MFA method 'pixel 6' from daniel.reeve; reviewed priya.nair MFA methods (no attacker method found) | New credentials only matter once old sessions are dead |
+| 3 | Removed attacker MFA method 'pixel 6' from daniel.reeve; reviewed priya.nair MFA methods (no attacker method found) | With attacker MFA in place the account is NOT clean
+after a reset - this is the back door |
 | 4 | Deleted inbox rule 'RSS Subscription' from daniel.reeve mailbox; audited both mailboxes for futher rules | Removes the Business Email Compromise staging; rules persist independently of credentials |
 | 5 | Blocked 102.89.44.17, 102.89.44.23, 102.89.45.101 via conditional Access / named locations | Cuts the know attacker infrastructure off from the tenant |
 | 6 | Verified redo Step 1 and Step 5 queries -no 102.89 activity after containment; forced re-authentication on both accounts | Containment is a claim until you prove it in the logs|
 
-## Recommendations
+# Recommendations
 
 1) Force password resets for the 24 targeted-but-not-breached accounts listed in section 6 - the spray may have come closer than the logs show.
 2)  Require multifactor Authentication on all accounts and disable legacy authentication protocols that bypass it; two accounts fell to password-only guessing.
@@ -155,7 +155,7 @@ alba.vega, amelia.frost, aria.reid, cole.burke, dina.said, emma.hayes, ethan.wel
 5)  Review Conditional Access: block or step-up authentication from countries with no business presence.
 6)   Brief the finance team on Business Email Compromise risk before the enterprise deal closes: verify any payment-detail change by phone on a known number.
 
-## Lesson Learned
+# Lesson Learned
 
 Detection relied on a human noticing impossible travel five and a half hours after initial access; a basic spray rule would have alerted on night one, roughly 51 hours earlier. The audit log turned a password incident into the real story - without it, containment would have missed the Multifactor Authentication back door and the business email compromise rule. Scoping past the first victim found the second
 account within minutes of the same query. Baseline comparison (Daniel vs Omar) prevented both a missed detection and a false accusation, and belongs in every identity investigation.
