@@ -146,6 +146,22 @@ after a reset - this is the back door |
 | 5 | Blocked 102.89.44.17, 102.89.44.23, 102.89.45.101 via conditional Access / named locations | Cuts the know attacker infrastructure off from the tenant |
 | 6 | Verified redo Step 1 and Step 5 queries -no 102.89 activity after containment; forced re-authentication on both accounts | Containment is a claim until you prove it in the logs|
 
+# Dtection Rule 
+
+The attack was visible on 8 Aug, two days before the breach. The signature of a spray is not failure volume per account
+(that catches brute force), it is one IP failing across MANY DIFFERENT accounts. So: count failures and distinct targets
+per IP in a rolling window.
+// Scheduled analytics rule - run every 6h over the last 6h of data
+CloudoraSignIn_CL
+| where TimeGenerated > ago(6h)
+| where ResultType == "50126"
+| summarize Failures = count(),
+            TargetedAccounts = dcount(UserPrincipalName),
+            SampleAccounts = make_set(UserPrincipalName, 5)
+            by IPAddress, Country
+| where TargetedAccounts >= 10
+| order by TargetedAccounts desc
+
 # Recommendations
 
 1) Force password resets for the 24 targeted-but-not-breached accounts listed in section 6 - the spray may have come closer than the logs show.
